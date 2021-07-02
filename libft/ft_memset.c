@@ -6,7 +6,7 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 17:36:31 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/06/24 16:04:40 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/07/01 15:56:37 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void	*ft_memset(void *b, int c, size_t len)
 		((unsigned char *) b)[counter] = (unsigned char) c;
 		counter++;
 	}
-	return (b);
+	return ((unsigned char *) b);
 }
