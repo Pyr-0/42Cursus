@@ -6,7 +6,7 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 11:13:22 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/06/24 17:09:14 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/07/03 14:53:40 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+void	*ft_memcpy(void * dst, const void * src, size_t n);
 /*void	ft_memccpy
 void	ft_memmove
 void	ft_memchr
