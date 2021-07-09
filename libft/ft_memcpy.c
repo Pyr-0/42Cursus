@@ -6,20 +6,18 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 16:13:25 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/07/07 20:44:59 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/07/09 18:21:03 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "string.h"
 
-void	*ft_memcpy(void * dst, const void * src, size_t n)
-
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	
 	size_t	counter;
 
-	if(dst + n >= src && dst <= src + n -1)
+	if (dst + n >= src && dst <= src + n - 1)
 	{
 		return (0);
 	}
@@ -31,6 +29,8 @@ void	*ft_memcpy(void * dst, const void * src, size_t n)
 	}
 	return (dst);
 }
+
+/*
 int main(void)
 {
 	char str[42] = "Milton";
@@ -42,4 +42,4 @@ int main(void)
 	char str4[42] = "Rojas";
 	printf("Original changed string : %s\n",memcpy(str3, str4, 3));
 	return(0);
-}
+}*/

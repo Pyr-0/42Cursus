@@ -6,7 +6,7 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 14:28:26 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/07/07 21:15:47 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/07/09 18:21:21 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_atoi (const char *str)
 	}
 	while (ft_isdigit(str[counter]))
 	{
-		result = result * 10 + (str[counter] - '0'); /*THIS ADDS TO THE RIGHT EACH NEXT PLACE*/ 
+		result = result * 10 + (str[counter] - '0');
 		counter++;
 	}
 	return (result * sign);
