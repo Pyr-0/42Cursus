@@ -6,7 +6,7 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 11:13:22 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/07/09 18:49:09 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/07/10 18:53:48 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	ft_bzero(void *s, size_t n);
 
-size_t	ft_strlen (const char *str);
-/*char	ft_strlcpy
+size_t	ft_strlen(const char *str);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+/*
 char	ft_strlcat
 char	ft_strchr
 char	ft_strrchr
