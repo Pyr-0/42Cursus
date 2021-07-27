@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
+/*   By: satori <satori@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:23:31 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/07/09 18:56:00 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/07/23 11:15:36 by satori           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*string1;
@@ -28,3 +29,15 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
+/*
+int main(void)
+{
+	char s1[42] = "she matters";
+	char s2[42] = "she doesn't think it matters";
+
+	printf("The result of ma' function is: %d\n", ft_memcmp(s1, s2, 3) );
+	printf("The original functiocn does this too :): %d \n", memcmp(s1, s2, 3));
+	return (0);
+}
+*/
