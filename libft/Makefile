@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: satori <satori@student.42.fr>              +#+  +:+       +#+         #
+#    By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/06/15 11:38:11 by mrojas-e          #+#    #+#              #
-#    Updated: 2021/07/27 09:18:43 by satori           ###   ########.fr        #
+#    Created: 2021/07/27 12:46:02 by mrojas-e          #+#    #+#              #
+#    Updated: 2021/07/31 14:53:58 by mrojas-e         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 SRC = *.c
 
-all: $(NAME)
 
+all: $(NAME)
 
 $(NAME):
 	gcc  -Wall -Werror -Wextra -c $(SRC)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: satori <satori@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 23:27:12 by satori            #+#    #+#             */
-/*   Updated: 2021/07/25 19:33:16 by satori           ###   ########.fr       */
+/*   Created: 2021/07/27 12:45:37 by mrojas-e          #+#    #+#             */
+/*   Updated: 2021/07/29 22:30:21 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <string.h>
 #include <stdio.h>
 
-char	*ft_strrchr(const char *s, int c)
 	/* this is the part of the function that brings us to the end of the string 
 	in order to count backwards*/
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*ptr_return;
 	int		i;
@@ -25,26 +25,28 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 		i++;
+		
 	while (i >= 0)
 	{
 		if (s[i] == (char) c)
 		{
-			ptr_return = &((char *) s)[i];
+			ptr_return = ((char *)(s + i));
+			//ptr_return = (&(char *)s[i]);
 			return (ptr_return);
 		}
 		i--;
 	}
-	return (ptr_return);
+	return (0);
 }
 
 /*int	main()
 {
 	char	*str;
-	str =  "Yo wut up bruhhh!";
+	str =  "Yo wut upY bruhhh!";
 
 	printf("Before the funk is = %s \n", str);
 	printf("After the funk is = %s \n", ft_strrchr(str, 'Y'));
 	printf("The original funk is = %s \n", strrchr(str, 'Y'));
+	printf("222After the funk is = %s \n", ft_strrchr("bonjour", 'b'));
 	return(0);	
-}
-*/
+}*/

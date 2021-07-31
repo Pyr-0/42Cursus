@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/27 12:44:43 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/07/27 12:44:46 by mrojas-e         ###   ########.fr       */
+/*   Created: 2021/07/31 13:29:19 by mrojas-e          #+#    #+#             */
+/*   Updated: 2021/07/31 22:22:15 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ptr;
-	size_t	counter;
-	size_t	size_in_bytes;
+	char	*str;
 
-	counter = 0;
-	size_in_bytes = nitems * size;
-	ptr = (char *)malloc(size_in_bytes);
-	if (ptr == NULL)
-		return (ptr);
-	while (counter < size_in_bytes)
+	str = ft_calloc(sizeof (char), (len + 1));
+	if (!str || !s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (str);
+	else
 	{
-		ptr[counter] = 0;
-		counter++;
+		ft_strlcpy(str, s + start, len + 1);
+		return (str);
 	}
-	return (ptr);
 }
+
+
+/* 
+int	main(void)
+{
+	const char str[] = "Hello World";
+	printf("%s", ft_substr(str, 6, 5));
+}
+ */

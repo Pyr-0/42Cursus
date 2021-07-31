@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/27 12:44:43 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/07/27 12:44:46 by mrojas-e         ###   ########.fr       */
+/*   Created: 2021/07/29 11:56:38 by mrojas-e          #+#    #+#             */
+/*   Updated: 2021/07/31 14:17:31 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-void	*ft_calloc(size_t nitems, size_t size)
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char	*ptr;
-	size_t	counter;
-	size_t	size_in_bytes;
+	size_t	i;
+	size_t	dlen;
+	size_t	slen;
+	size_t	count;
 
-	counter = 0;
-	size_in_bytes = nitems * size;
-	ptr = (char *)malloc(size_in_bytes);
-	if (ptr == NULL)
-		return (ptr);
-	while (counter < size_in_bytes)
+	i = 0;
+	dlen = ft_strlen(dst);
+	slen = ft_strlen(src);
+	count = dlen;
+
+	if (dlen >= dstsize)
+		return(slen + dstsize);
+	while(count < dstsize -1 && src[i] != '\0')
 	{
-		ptr[counter] = 0;
-		counter++;
+		dst[count] = src[i];
+		i++;
+		count++;	
 	}
-	return (ptr);
+	dst[count] = '\0';
+	return (dlen + slen);
 }

@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/27 12:44:43 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/07/27 12:44:46 by mrojas-e         ###   ########.fr       */
+/*   Created: 2021/07/31 11:36:45 by mrojas-e          #+#    #+#             */
+/*   Updated: 2021/07/31 13:16:05 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*ptr;
-	size_t	counter;
-	size_t	size_in_bytes;
+	long long int i; 
 
-	counter = 0;
-	size_in_bytes = nitems * size;
-	ptr = (char *)malloc(size_in_bytes);
-	if (ptr == NULL)
-		return (ptr);
-	while (counter < size_in_bytes)
+	i = n;
+
+	if (i < 0)
 	{
-		ptr[counter] = 0;
-		counter++;
+		i *= -1;
+		ft_putchar_fd('-', fd);
 	}
-	return (ptr);
+	if (i > 9)
+	{
+		ft_putnbr_fd((i/10), fd);
+		ft_putchar_fd((i % 10 + '0'), fd);
+	}
+	else
+		ft_putchar_fd((i + '0'), fd);
 }
