@@ -6,7 +6,7 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 12:45:54 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/07/31 22:59:06 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/08/02 17:02:39 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,17 @@ int		ft_isascii(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
-
 void	*ft_calloc(size_t nitems, size_t size);
+char	*ft_strdup(const char *s1);
 
 /*Second*/
 void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
+
 /* char **ft_split(char const *s, char c);
  */
 

@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/31 13:29:19 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/08/01 20:17:22 by mrojas-e         ###   ########.fr       */
+/*   Created: 2021/08/01 19:58:16 by mrojas-e          #+#    #+#             */
+/*   Updated: 2021/08/01 20:14:16 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*str;
-
-	str = ft_calloc(sizeof (char), (len + 1));
-	if (!str || !s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		return (str);
-	else
-	{
-		ft_strlcpy(str, s + start, len + 1);
-		return (str);
-	}
+	if (!s)
+		return ;
+	write (fd, s, ft_strlen(s));
+	write (fd, "\n", 1);
 }
-
-/* 
-int	main(void)
-{
-	const char str[] = "Hello World";
-	printf("%s", ft_substr(str, 6, 5));
-}
- */

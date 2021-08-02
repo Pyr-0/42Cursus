@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/31 13:29:19 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/08/01 20:17:22 by mrojas-e         ###   ########.fr       */
+/*   Created: 2021/08/01 20:54:01 by mrojas-e          #+#    #+#             */
+/*   Updated: 2021/08/02 17:10:14 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
+	int		i;
+	int		j;
 
-	str = ft_calloc(sizeof (char), (len + 1));
-	if (!str || !s)
+	i = 0;
+	j = 0;
+	if (!s1 || !s2)
 		return (NULL);
-	if (start >= ft_strlen(s))
-		return (str);
-	else
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!str)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		ft_strlcpy(str, s + start, len + 1);
-		return (str);
+		str[j++] = s1[i++];
 	}
+	i = 0;
+	while (s2[i] != '\0')
+	{
+		str[j++] = s2[i++];
+	}
+	str[j] = '\0';
+	return (str);
 }
-
-/* 
-int	main(void)
-{
-	const char str[] = "Hello World";
-	printf("%s", ft_substr(str, 6, 5));
-}
- */
