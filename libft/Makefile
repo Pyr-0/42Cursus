@@ -6,7 +6,7 @@
 #    By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/27 12:46:02 by mrojas-e          #+#    #+#              #
-#    Updated: 2021/08/02 23:53:29 by mrojas-e         ###   ########.fr        #
+#    Updated: 2021/08/03 18:35:30 by mrojas-e         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ fclean: clean
 
 re: fclean all
 
+so:
 	gcc -nostartfiles -fPIC -c $(SRC)
 	gcc -nostartfiles -shared -o libft.so *.o
 

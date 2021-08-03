@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/31 11:36:45 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/08/03 18:13:03 by mrojas-e         ###   ########.fr       */
+/*   Created: 2021/08/03 18:13:57 by mrojas-e          #+#    #+#             */
+/*   Updated: 2021/08/03 20:09:29 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	long int	i;
+	char	*res;
+	int		i;
 
-	i = n;
-	if (i < 0)
+	i = 0;
+	if (s == 0 || f == 0)
+		return (NULL);
+	res = ft_calloc(sizeof(char), ft_strlen(s) + 1);
+	if (!res)
+		return (NULL);
+	while (s[i] != 0)
 	{
-		i *= -1;
-		ft_putchar_fd('-', fd);
+		res[i] = f(i, s[i]);
+		i++;
 	}
-	if (i > 9)
-	{
-		ft_putnbr_fd((i / 10), fd);
-		ft_putchar_fd((i % 10 + '0'), fd);
-	}
-	else
-		ft_putchar_fd((i + '0'), fd);
+	return (res);
 }

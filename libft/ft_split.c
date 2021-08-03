@@ -6,14 +6,14 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 19:16:46 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/08/02 23:45:54 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/08/03 20:19:37 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int		ft_count(const char *s1, char c)
+int	ft_count(const char *s1, char c)
 {
 	int	i;
 	int	wcount;
@@ -47,25 +47,25 @@ char	*ft_helper(const char *s1, int *start, char c)
 	return (ft_substr(s1, temp, end - temp));
 }
 
-char **ft_split(const char *s1, char c)
+char	**ft_split(const char *s1, char c)
 {
-	int	start;
-	int	words;
-	int	wcount;
+	int		start;
+	int		words;
+	int		wcount;
 	char	**res;
 
-	if(!s1)
+	if (!s1)
 		return (NULL);
 	start = 0;
 	words = 0;
 	wcount = ft_count(s1, c);
 	res = ft_calloc(wcount + 1, sizeof(char *));
-	if(!res)
-		return (NULL);	
-	while (words < wcount && s1[start]!= '\0')
+	if (!res)
+		return (NULL);
+	while (words < wcount && s1[start] != '\0')
 	{
-		res[words] = ft_helper(s1, &start, c); 
-		if(res[words++] == 0)
+		res[words] = ft_helper(s1, &start, c);
+		if (res[words++] == 0)
 			return (NULL);
 	}
 	return (res);
