@@ -6,7 +6,7 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 23:05:54 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/08/03 23:28:17 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/08/04 18:05:02 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 to add the NEW element to the start*/
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (*lst == NULL)
-		*lst = new;
-	else
-		ft_lstlast(*lst)->next = new;
-	new->next = NULL;
+	if (lst != NULL)
+	{
+		if (*lst == NULL)
+			*lst = new;
+		else
+			ft_lstlast(*lst)->next = new;
+		new->next = NULL;
+	}
 }

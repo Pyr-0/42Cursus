@@ -6,7 +6,7 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 16:13:25 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/07/10 16:23:44 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/08/04 20:00:04 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	size_t	counter;
 
 	if (dst + n >= src && dst <= src + n - 1)
-	{
 		return (0);
-	}
 	counter = 0;
 	while (counter < n)
 	{
