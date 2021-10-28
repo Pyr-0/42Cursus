@@ -6,7 +6,7 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 12:39:00 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/08/03 20:19:28 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/08/05 16:29:54 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,3 @@ char	*ft_itoa(int n)
 		ptr[ndigits] = '-';
 	return (ptr);
 }
-
-/* int main (void)
-{
-	printf("%s\n", ft_itoa(0));
-	return(0);
-}
- */

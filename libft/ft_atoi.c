@@ -6,14 +6,13 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 12:44:33 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/07/27 12:44:35 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/09/14 17:15:25 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static	int	ft_isspace(char c)
-
 {
 	if (c == ' ' || c == '\f' || c == '\v'
 		|| c == '\n' || c == '\r' || c == '\t')

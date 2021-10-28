@@ -6,7 +6,7 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 23:19:48 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/09/21 22:07:20 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/10/18 19:23:44 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	main(int argc, char *argv[])
 		vars.c = argv[2][vars.j++];
 		while (vars.x >= 0)
 		{
-			usleep(20);
+			usleep(80);
 			if (vars.c & (1 << vars.x))
 				kill(vars.pid, SIGUSR2);
 			else
