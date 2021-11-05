@@ -6,7 +6,7 @@
 #    By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 23:32:22 by mrojas-e          #+#    #+#              #
-#    Updated: 2021/10/21 16:51:21 by mrojas-e         ###   ########.fr        #
+#    Updated: 2021/11/02 22:55:05 by mrojas-e         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,10 @@
 NAME = Push_Swap
 SRCS_PATH = src/
 HEADERS_FOLDER = -I includes/
-SRCS = ./src/push_swap.c ./src/ft_operations.c ./src/error_handling.c
+SRCS =	./src/push_swap.c ./utils/list_utils.c\
+		./src/error_handling.c ./utils/sorting.c\
+		./operations/push_pop.c ./operations/reverse_rotate.c\
+		./operations/rotate.c ./operations/swap.c
 OBJS = ${SRCS:.c=.o}
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror

@@ -6,7 +6,7 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 01:24:41 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/10/28 01:04:35 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/11/02 23:16:39 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,11 @@
 # define CYAN "\033[1;36m"
 # define GREY "\033[1;37m"
 # define RESET "\033[0m"
-// # define A 1
-// # define B 0
 
 //==== STRUCTS ====//
 
 typedef struct s_Ouroboros{
+	int					rank;
 	int					data;
 	struct s_Ouroboros	*next;
 	struct s_Ouroboros	*previous;
@@ -48,9 +47,19 @@ typedef struct s_Ouroboros{
 // 	struct t_Ouroboros	*tail;
 // }t_Stack;
 
-//=============== CREATE LIST =============//
+//=============== LIST MANAGEMENT =============//
+
 int		ft_create_list(t_Ouroboros **snake_head, char **argv);
 void	Print_list(t_Ouroboros *a, t_Ouroboros *b);
+int		ft_list_max_is(t_Ouroboros **snake_head);
+int		ft_is_sorted(t_Ouroboros **snake_head);
+int		ft_list_len(t_Ouroboros **snake_head);
+
+//=============== ALGORITHM =============//
+
+void	ft_sort_2(t_Ouroboros **snake_head, t_Ouroboros *a);
+void	ft_sort_3(t_Ouroboros **snake_head);
+void	ft_sort_3_1(t_Ouroboros **snake_head, t_Ouroboros *a, t_Ouroboros *b, t_Ouroboros *c);
 
 //=================== OPERATIONS =============//
 
@@ -73,7 +82,7 @@ void	ft_RR_both(t_Ouroboros **a, t_Ouroboros **b);
 
 //===== ERROR HANDLING AND FREE MEMORY ====//
 
-int		ft_error (t_Ouroboros **snake_head, char **input);
+int		ft_error(t_Ouroboros **snake_head, char **input);
 void	ft_free_list(t_Ouroboros **snake_head);
 int		ft_free_array(char **input);
 int		ft_check_doubles(t_Ouroboros **snake_head);

@@ -82,3 +82,7 @@ int main(int argc, char *argv[])
 	}
 	ft_stacks_destroy(&stacks);
 }
+
+
+int algo1(t_Ourobouros **snake_head, int input)
+while (input[i])

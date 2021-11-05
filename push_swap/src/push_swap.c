@@ -6,7 +6,7 @@
 /*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 23:33:00 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/10/28 00:59:52 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/11/01 16:51:02 by mrojas-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,41 +53,45 @@ int	ft_create_list(t_Ouroboros **snake_head, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_Ouroboros	*a;
-	t_Ouroboros	*b;
+	t_Ouroboros	*stack_a;
+	t_Ouroboros	*stack_b;
 
 	if (argc < 2)
 		return (0);
-	b = 0;
-	a = 0;
-	if (ft_create_list(&a, argv) == ERROR)
+	stack_b = 0;
+	stack_a = 0;
+	if (ft_create_list(&stack_a, argv) == ERROR)
 		return (ERROR);
+	ft_is_sorted(&stack_a);
+	Print_list(stack_a, stack_b);
+	ft_sort_3(&stack_a);
+	Print_list(stack_a, stack_b);
+	ft_is_sorted(&stack_a);
+
 /*This is the Example from the PDF*/
 /*_____________________*/
 
-	// Print_list(a, b);
-	// ft_swap_A(&a, &b);
-	// Print_list(a, b);
-	// ft_push_B(&a, &b);
-	// Print_list(a, b);
-	// ft_push_B(&a, &b);
-	// Print_list(a, b);
-	// ft_push_B(&a, &b);
-	// Print_list(a, b);
-	// ft_rotate_both(&a, &b);
-	// ft_RR_both(&a, &b);
-	// Print_list(a, b);
-	// ft_swap_A(&a, &b);
-	// Print_list(a, b);
-	// ft_push_A(&a, &b);
-	// Print_list(a, b);
-	// ft_push_A(&a, &b);
-	// Print_list(a, b);
-	// ft_push_A(&a, &b);
-	Print_list(a, b);
-	ft_free_list(&a);
-	ft_free_list(&b);
-	a = NULL;
-	b = NULL;
-	system("leaks push_swap");
+	// Print_list(stack_a, stack_b);
+	// ft_push_B(&stack_a, &stack_b);
+	// Print_list(stack_a, stack_b);
+	// ft_push_B(&stack_a, &stack_b);
+	// Print_list(stack_a, stack_b);
+	// ft_push_B(&stack_a, &stack_b);
+	// Print_list(stack_a, stack_b);
+	// ft_rotate_both(&stack_a, &stack_b);
+	// ft_RR_both(&stack_a, &stack_b);
+	// Print_list(stack_a, stack_b);
+	// ft_swap_A(&stack_a, &stack_b);
+	// Print_list(stack_a, stack_b);
+	// ft_push_A(&stack_a, &stack_b);
+	// Print_list(stack_a, stack_b);
+	// ft_push_A(&stack_a, &stack_b);
+	// Print_list(stack_a, stack_b);
+	// ft_push_A(&stack_a, &stack_b);
+	// Print_list(stack_a, stack_b);
+	ft_free_list(&stack_a);
+	ft_free_list(&stack_b);
+	stack_a = NULL;
+	stack_b = NULL;
+	// system("leaks push_swap");
 }
