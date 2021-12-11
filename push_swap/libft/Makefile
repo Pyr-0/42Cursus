@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+         #
+#    By: satori <satori@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/27 12:46:02 by mrojas-e          #+#    #+#              #
-#    Updated: 2021/10/17 17:54:14 by mrojas-e         ###   ########.fr        #
+#    Updated: 2021/11/09 17:19:26 by satori           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 
-re: @fclean all
+re: fclean all
 
 bonus: $(NAME)
 	@gcc  -Wall -Werror -Wextra -c $(BONUS)

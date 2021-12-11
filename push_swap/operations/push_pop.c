@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_pop.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
+/*   By: satori <satori@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 23:25:47 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/10/31 23:53:01 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/11/11 22:45:55 by satori           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ void	ft_push(t_Ouroboros **snake_head, t_Ouroboros *new_node)
 	}
 }
 
-void	ft_push_A(t_Ouroboros **a, t_Ouroboros **b)
+void	ft_push_to_A(t_Ouroboros **a, t_Ouroboros **b)
 {
 	ft_push(a, ft_pop(b, 0));
 	write(1, CYAN, 7);
 	write(1, "pa\n", 3);
 }
 
-void	ft_push_B(t_Ouroboros **a, t_Ouroboros **b)
+void	ft_push_to_B(t_Ouroboros **a, t_Ouroboros **b)
 {
 	ft_push(b, ft_pop(a, 0));
 	write(1, CYAN, 7);

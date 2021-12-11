@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+         #
+#    By: satori <satori@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 23:32:22 by mrojas-e          #+#    #+#              #
-#    Updated: 2021/11/02 22:55:05 by mrojas-e         ###   ########.fr        #
+#    Updated: 2021/11/10 12:51:04 by satori           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 NAME = Push_Swap
 SRCS_PATH = src/
 HEADERS_FOLDER = -I includes/
-SRCS =	./src/push_swap.c ./utils/list_utils.c\
+SRCS =	./src/push_swap.c ./utils/list_utils.c ./utils/algo_utils.c\
 		./src/error_handling.c ./utils/sorting.c\
 		./operations/push_pop.c ./operations/reverse_rotate.c\
 		./operations/rotate.c ./operations/swap.c
@@ -28,8 +28,8 @@ AR = ar crs
 LIBFT_LIB = libft.a
 LIBFT_PATH = libft/
 LIBFT_OBJS = ${LIBFT_PATH}*.o
-LIBFTMAKE = $(MAKE) -C ${LIBFT_PATH}
-
+LIBFTMAKE = $(MAKE) -C ${LIBFT_PATH} --no-print-directory
+ 
 #====COLORS====#
 
 LILA := \033[0;35m
@@ -65,4 +65,4 @@ fclean: 	clean
 
 re: fclean all
 
-.PHONY: @all clean fclean re
+.PHONY: all clean fclean re

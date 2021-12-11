@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
+/*   By: satori <satori@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 23:33:00 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/11/01 16:51:02 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/11/11 14:33:44 by satori           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,45 +53,21 @@ int	ft_create_list(t_Ouroboros **snake_head, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_Ouroboros	*stack_a;
-	t_Ouroboros	*stack_b;
-
+	t_stacks stacks;
 	if (argc < 2)
 		return (0);
-	stack_b = 0;
-	stack_a = 0;
-	if (ft_create_list(&stack_a, argv) == ERROR)
+	stacks.stack_b = 0;
+	stacks.stack_a = 0;
+	if (ft_create_list(&stacks.stack_a, argv) == ERROR)
 		return (ERROR);
-	ft_is_sorted(&stack_a);
-	Print_list(stack_a, stack_b);
-	ft_sort_3(&stack_a);
-	Print_list(stack_a, stack_b);
-	ft_is_sorted(&stack_a);
-
-/*This is the Example from the PDF*/
-/*_____________________*/
-
-	// Print_list(stack_a, stack_b);
-	// ft_push_B(&stack_a, &stack_b);
-	// Print_list(stack_a, stack_b);
-	// ft_push_B(&stack_a, &stack_b);
-	// Print_list(stack_a, stack_b);
-	// ft_push_B(&stack_a, &stack_b);
-	// Print_list(stack_a, stack_b);
-	// ft_rotate_both(&stack_a, &stack_b);
-	// ft_RR_both(&stack_a, &stack_b);
-	// Print_list(stack_a, stack_b);
-	// ft_swap_A(&stack_a, &stack_b);
-	// Print_list(stack_a, stack_b);
-	// ft_push_A(&stack_a, &stack_b);
-	// Print_list(stack_a, stack_b);
-	// ft_push_A(&stack_a, &stack_b);
-	// Print_list(stack_a, stack_b);
-	// ft_push_A(&stack_a, &stack_b);
-	// Print_list(stack_a, stack_b);
-	ft_free_list(&stack_a);
-	ft_free_list(&stack_b);
-	stack_a = NULL;
-	stack_b = NULL;
+	Print_list(stacks.stack_a,stacks.stack_b);
+	ft_find_rank(&stacks.stack_a);
+	choose_algo(&stacks.stack_a, &stacks.stack_b, ft_list_len(&stacks.stack_a));
+	Print_list(stacks.stack_a, stacks.stack_b);
+	ft_is_sorted(&stacks.stack_a);
+	ft_free_list(&stacks.stack_a);
+	ft_free_list(&stacks.stack_b);
+	stacks.stack_a = NULL;
+	stacks.stack_b = NULL;
 	// system("leaks push_swap");
 }

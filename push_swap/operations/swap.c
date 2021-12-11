@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
+/*   By: satori <satori@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 23:20:04 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/10/31 23:20:29 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/12/02 19:54:33 by satori           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,18 @@ changing the data variable of each node*/
 void	ft_swap(t_Ouroboros **stackA_B)
 {
 	int	temp;
+	int	temp_rank;
+	int	temp_irank;
 
 	temp = (*stackA_B)->data;
+	temp_rank = (*stackA_B)->rank;
+	temp_irank = (*stackA_B)->inverse_rank;
 	(*stackA_B)->data = (*stackA_B)->next->data;
+	(*stackA_B)->rank = (*stackA_B)->next->rank;
+	(*stackA_B)->inverse_rank = (*stackA_B)->next->inverse_rank;
 	(*stackA_B)->next->data = temp;
+	(*stackA_B)->next->rank = temp_rank;
+	(*stackA_B)->next->inverse_rank = temp_irank;
 	return ;
 }
 
