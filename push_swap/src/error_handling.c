@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrojas-e <mrojas-e@student.42.fr>          +#+  +:+       +#+        */
+/*   By: satori <satori@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 14:42:53 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/10/28 01:03:15 by mrojas-e         ###   ########.fr       */
+/*   Updated: 2021/12/15 00:01:03 by satori           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "push_swap.h"
 
-/* =====FREE WILLY 🐋=======*/
+/* =====FREE WILLY 🐋 =======*/
 
 void	ft_free_list(t_Ouroboros **snake_head)
 {

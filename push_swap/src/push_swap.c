@@ -6,7 +6,7 @@
 /*   By: satori <satori@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 23:33:00 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/11/11 14:33:44 by satori           ###   ########.fr       */
+/*   Updated: 2021/12/16 14:48:07 by satori           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,11 @@ int	main(int argc, char **argv)
 	stacks.stack_a = 0;
 	if (ft_create_list(&stacks.stack_a, argv) == ERROR)
 		return (ERROR);
-	Print_list(stacks.stack_a,stacks.stack_b);
 	ft_find_rank(&stacks.stack_a);
 	choose_algo(&stacks.stack_a, &stacks.stack_b, ft_list_len(&stacks.stack_a));
-	Print_list(stacks.stack_a, stacks.stack_b);
-	ft_is_sorted(&stacks.stack_a);
+//	ft_is_sorted(&stacks.stack_a);
 	ft_free_list(&stacks.stack_a);
 	ft_free_list(&stacks.stack_b);
 	stacks.stack_a = NULL;
 	stacks.stack_b = NULL;
-	// system("leaks push_swap");
 }

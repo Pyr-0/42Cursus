@@ -6,7 +6,7 @@
 /*   By: satori <satori@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 01:24:41 by mrojas-e          #+#    #+#             */
-/*   Updated: 2021/12/02 19:54:33 by satori           ###   ########.fr       */
+/*   Updated: 2021/12/16 15:39:31 by satori           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@
 # define ERROR -1
 # define RED "\033[1;31m"
 # define GREEN "\033[1;32m"
-# define YELLOW "\033[1;33m"
-# define BLUE "\033[1;34m"
-# define PURPLE "\033[1;35m"
 # define CYAN "\033[1;36m"
 # define RESET "\033[0m"
 
@@ -37,7 +34,6 @@
 typedef struct s_Ouroboros{
 	int					rank;
 	int					inverse_rank;
-	int					position;
 	int					data;
 	struct s_Ouroboros	*partner;
 	struct s_Ouroboros	*next;
@@ -51,9 +47,7 @@ typedef struct s_stacks{
 
 //=============== LIST MANAGEMENT =============//
 
-void			Print_list(t_Ouroboros *a, t_Ouroboros *b);
 int				ft_create_list(t_Ouroboros **snake_head, char **argv);
-int				ft_list_max_is(t_Ouroboros **snake_head);
 t_Ouroboros		*ft_list_min_is(t_Ouroboros **snake_head);
 int				ft_is_sorted(t_Ouroboros **snake_head);
 int				ft_list_len(t_Ouroboros **snake_head);
@@ -61,10 +55,12 @@ void			ft_find_rank(t_Ouroboros **snake_head);
 
 //=============== ALGORITHM =============//
 
+void	choose_algo(t_Ouroboros **snake_head, t_Ouroboros **b,int len);
 void	ft_sort_2(t_Ouroboros **snake_head, t_Ouroboros *a);
 void	ft_sort_3(t_Ouroboros **snake_head);
 void	ft_sort_3_1(t_Ouroboros **snake_head, t_Ouroboros *a, t_Ouroboros *b, t_Ouroboros *c);
-void	choose_algo(t_Ouroboros **snake_head, t_Ouroboros **b,int len);
+void	ft_sort_4(t_Ouroboros **stack_a, t_Ouroboros **stack_b);
+void	ft_sort_5(t_Ouroboros **stack_a, t_Ouroboros **stack_b);
 t_Ouroboros *find_partner(t_Ouroboros *stack_a, t_Ouroboros *node_b);
 
 //=================== OPERATIONS =============//
@@ -73,7 +69,6 @@ t_Ouroboros	*ft_pop(t_Ouroboros **current, int x);
 void	ft_swap(t_Ouroboros **snake_head);
 void	ft_swap_A(t_Ouroboros **a, __attribute__ ((unused)) t_Ouroboros **b);
 void	ft_swap_B(__attribute__ ((unused)) t_Ouroboros **a, t_Ouroboros **b);
-void	ft_swap_both(t_Ouroboros **a, t_Ouroboros **b);
 void	ft_push(t_Ouroboros **snake_head, t_Ouroboros *new_node);
 void	ft_push_to_B(t_Ouroboros **a, t_Ouroboros **b);
 void	ft_push_to_A(t_Ouroboros **a, t_Ouroboros **b);
